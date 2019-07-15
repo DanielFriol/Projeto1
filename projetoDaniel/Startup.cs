@@ -17,6 +17,8 @@ namespace projetoDaniel
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                Data.DbInitializer.Init(new Data.ProjectTestDataContext()); 
             }
 
             app.UseMvcWithDefaultRoute();
