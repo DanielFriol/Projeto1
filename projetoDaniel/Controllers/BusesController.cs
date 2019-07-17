@@ -1,15 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using projetoDaniel.Data;
-using projetoDaniel.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace projetoDaniel.Controllers
 {
-    public class ProductsController : Controller
+    public class BusesController : Controller
     {
 
 

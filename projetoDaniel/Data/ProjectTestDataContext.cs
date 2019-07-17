@@ -16,6 +16,6 @@ namespace projetoDaniel.Data
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-TFU4NF7\SQLEXPRESS02;Initial Catalog=ProjetoDaniel;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        public DbSet<Products> Products { get; set; }
+        public DbSet<Buses> Products { get; set; }
     }
 }
