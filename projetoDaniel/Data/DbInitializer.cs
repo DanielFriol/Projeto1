@@ -10,23 +10,29 @@ namespace projetoDaniel.Data
         {
             ctx.Database.EnsureCreated();
 
-            if (!ctx.Products.Any())
+
+            var buses = new List<Buses>()
             {
-                var products = new List<Buses>()
-            {
-                new Buses(){ Prefixo="4900",Empresa= "Mactur", Linha= 98, Quantidade_Lugares= 46},
-                new Buses() { Prefixo="5300",Empresa= "Mactur", Linha= 98, Quantidade_Lugares= 47},
-                new Buses() {Prefixo="4700",Empresa= "Mactur", Linha= 98, Quantidade_Lugares= 46},
-                new Buses() {Prefixo="5000",Empresa= "Mactur", Linha= 98, Quantidade_Lugares= 47 },
-                new Buses() {Prefixo="5400",Empresa= "Mactur", Linha= 98, Quantidade_Lugares= 47 }
+                new Buses(){ Prefixo="4900",Empresa= "Mactur", Linha= 98, Quantidadelugares= 46},
+                new Buses() { Prefixo="5300",Empresa= "Mactur", Linha= 98, Quantidadelugares= 47},
+                new Buses() {Prefixo="4700",Empresa= "Mactur", Linha= 98, Quantidadelugares= 46},
+                new Buses() {Prefixo="5000",Empresa= "Mactur", Linha= 98, Quantidadelugares= 47 },
+                new Buses() {Prefixo="5400",Empresa= "Mactur", Linha= 98, Quantidadelugares= 47 }
 
             };
 
-                ctx.Products.AddRange(products);
+            if (!ctx.Buses.Any())
+            {
+                ctx.Buses.AddRange(buses);
                 ctx.SaveChanges();
-
             }
 
+            if (!ctx.Avaliations.Any())
+            {
+                var avaliacao = new Avaliation() { Bus = buses[0], ArCond = 1, Balanco = 1, Barulho = 1, Conforto = 1, Space = 1, TemWifi = 0 };
+                ctx.Avaliations.AddRange(avaliacao);
+                ctx.SaveChanges();
+            }
         }
     }
 }

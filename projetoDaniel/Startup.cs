@@ -10,22 +10,27 @@ namespace projetoDaniel
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<Data.ProjectTestDataContext>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Data.ProjectTestDataContext ctx)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
 
-                Data.DbInitializer.Init(new Data.ProjectTestDataContext()); 
+                Data.DbInitializer.Init(ctx); 
             }
+
+            app.UseStaticFiles();
+            app.UseNodeModules(env.ContentRootPath);
 
             app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync("Not Found!");
             });
         }
     }

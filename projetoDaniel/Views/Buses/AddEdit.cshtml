@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Adicionar Ônibus";
+
+}
+
+<h2>@ViewBag.Title</h2>
+<form method="post">
+
+
+    <div class="form-group">
+        <label>Prefixo</label>
+        <input type="text" name="prefixo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Linha</label>
+        <input type="number" name="linha" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Empresa</label>
+        <input type="text" name="empresa" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Quantidade de Lugares</label>
+        <input type="number" name="quantidadedelugares" class="form-control" />
+    </div>
+
+    <button>Enviar</button>
+    <a href="#">Cancelar</a>
+
+
+
+</form>

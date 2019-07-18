@@ -1,4 +1,6 @@
-﻿@{ 
+﻿@model  IEnumerable<Buses>
+
+@{ 
     ViewBag.Title = "Listagem de Ônibus";
 }
 
@@ -12,6 +14,8 @@
             <th>Quantidade de Lugares</th>
             <th>Linha</th>
             <th>Empresa</th>
+            <th>Data Criação</th>
+            <th>Id</th>
 
 
         </tr>
@@ -21,10 +25,11 @@
         {
         <tr>
             <td>@item.Prefixo</td>
-            <td>@item.Quantidade_Lugares</td>
+            <td>@item.Quantidadelugares</td>
             <td>@item.Linha</td>
             <td>@item.Empresa</td>
-
+            <td>@item.DataCriacao</td>
+            <td>@item.Id</td>
 
         </tr>
 

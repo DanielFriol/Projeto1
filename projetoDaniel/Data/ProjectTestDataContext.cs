@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using projetoDaniel.Models;
 using System;
 using System.Collections.Generic;
@@ -8,14 +9,21 @@ using System.Threading.Tasks;
 
 namespace projetoDaniel.Data
 {
-    public class ProjectTestDataContext:DbContext
-
+    public class ProjectTestDataContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        private readonly IConfiguration _config;
+
+        public ProjectTestDataContext(IConfiguration config)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-TFU4NF7\SQLEXPRESS02;Initial Catalog=ProjetoDaniel;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            _config = config;
         }
 
-        public DbSet<Buses> Products { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(_config.GetConnectionString("projectConnection"));
+        }
+
+        public DbSet<Buses> Buses { get; set; }
+        public DbSet<Avaliation> Avaliations { get; set; }
     }
 }
