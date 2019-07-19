@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel\\Source\\Repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj": {}
+    "C:\\Users\\Daniel\\Source\\Repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel\\Source\\Repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj": {
+    "C:\\Users\\Daniel\\Source\\Repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\Source\\Repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
+        "projectUniqueName": "C:\\Users\\Daniel\\Source\\Repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
         "projectName": "projetoDaniel",
-        "projectPath": "C:\\Users\\Daniel\\Source\\Repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
+        "projectPath": "C:\\Users\\Daniel\\Source\\Repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
         "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\Source\\Repos\\DanielFriol\\Projeto1\\projetoDaniel\\obj\\",
+        "outputPath": "C:\\Users\\Daniel\\Source\\Repos\\Projeto1\\projetoDaniel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

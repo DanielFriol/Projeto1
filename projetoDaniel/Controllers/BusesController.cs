@@ -25,7 +25,6 @@ namespace projetoDaniel.Controllers
         public IActionResult AddEdit()
         {
 
-
             return View();
 
         }
@@ -33,6 +32,8 @@ namespace projetoDaniel.Controllers
         [HttpPost]
         public IActionResult AddEdit(Buses model)
         {
+            _ctx.Buses.Add(model);
+            _ctx.SaveChanges();
             return RedirectToAction("Index");
             
         }
