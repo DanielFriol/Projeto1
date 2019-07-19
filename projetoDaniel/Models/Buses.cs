@@ -11,15 +11,15 @@ namespace projetoDaniel.Models
     {
      
         [Column(TypeName= "varchar(10)")]
-        [Required]
+        [Required(ErrorMessage ="Campo é obrigatório")]
         public string Prefixo { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Campo é obrigatório")]
         public int Quantidadelugares { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Campo é obrigatório")]
         public int Linha { get; set; }
 
         [Column(TypeName = "varchar(100)")]
-        [Required]
+        [Required(ErrorMessage = "Campo é obrigatório")]
         public string Empresa { get; set; }
 
         public List<Avaliation> Avaliacoes { get; set; } = new List<Avaliation>();

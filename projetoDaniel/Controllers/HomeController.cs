@@ -9,11 +9,8 @@ namespace projetoDaniel.Controllers
 {
     public class HomeController:Controller
     {
-        public IActionResult Index()
-        {
+        public IActionResult Index() =>  View();
 
-            return View();
-
-        }
+        
     }
 }

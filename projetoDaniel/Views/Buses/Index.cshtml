@@ -17,8 +17,7 @@
             <th>Quantidade de Lugares</th>
             <th>Linha</th>
             <th>Empresa</th>
-            <th>Data Criação</th>
-            <th>Id</th>
+            <th></th>
 
 
         </tr>
@@ -31,8 +30,11 @@
             <td>@item.Quantidadelugares</td>
             <td>@item.Linha</td>
             <td>@item.Empresa</td>
-            <td>@item.DataCriacao</td>
-            <td>@item.Id</td>
+            <td>
+                <a class="btn btn-outline-success btn-sm" asp-action="AddEdit" asp-route-id="@item.Id" >Editar</a>
+                <button onclick="excluir('@item.Id','@item.Prefixo')" class="btn btn-danger btn-sm">Excluir</button>
+
+            </td>
 
         </tr>
 
@@ -42,10 +44,43 @@
 
 </table>
 
-<br />
+<br />  
 <br />
 <div>
     <p align="right">
-    <a class="btn btn-outline-success" href="@Url.Action("AddEdit")">Adicionar Ônibus</a>
+    <a class="btn btn-success" asp-action="AddEdit" asp-controller="Buses">Adicionar Ônibus</a>
     </p>
 </div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-del">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Exclusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir o ônibus <strong><span id="prefixo-onibus"></span></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-primary">Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section  scripts{ 
+    <script>
+    function excluir(id,prefixo){
+
+        $('#prefixo-onibus').text(prefixo);
+        $('#modal-del').modal('show');
+        
+    }
+    </script>
+}

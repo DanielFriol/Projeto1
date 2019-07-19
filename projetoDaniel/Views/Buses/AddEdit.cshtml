@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Adicionar Ônibus";
+﻿@model Buses
+@{
+    ViewBag.Title = $"{(Model.Id == 0 ? "Adicionar" : "Editar")} Ônibus";
 
 }
 
@@ -9,25 +10,43 @@
 
     <div class="form-group">
         <label>Prefixo</label>
-        <input type="text" asp-fpr="Prefixo" class="form-control" autofocus />
+        <input type="text" asp-for="Prefixo" class="form-control" autofocus />
+        <small class="is-invalid">
+            <span asp-validation-for="Prefixo"></span>
+        </small>
     </div>
 
     <div class="form-group">
         <label>Linha</label>
-        <input type="number" name="linha" class="form-control" />
+        <input type="number" asp-for="Linha" class="form-control" />
+        <small class="is-invalid">
+            <span asp-validation-for="Linha"></span>
+        </small>
     </div>
     <div class="form-group">
         <label>Empresa</label>
-        <input type="text" name="empresa" class="form-control" />
+        <input type="text" asp-for="Empresa" class="form-control" />
+        <small class="is-invalid">
+            <span asp-validation-for="Empresa"></span>
+        </small>
     </div>
     <div class="form-group">
         <label>Quantidade de Lugares</label>
-        <input type="number" name="Quantidadelugares" class="form-control" />
+        <input type="number" asp-for="Quantidadelugares" class="form-control" />
+        <small class="is-invalid">
+            <span asp-validation-for="Quantidadelugares"></span>
+        </small>
     </div>
 
-    <button type="submit" class="btn btn-outline-dark" >Enviar</button>
-    <a href="/Buses" class="btn btn-info">Cancelar</a>
+    <button type="submit" class="btn btn-outline-dark">Enviar</button>
+    <a asp-action="Index" asp-controller="Buses" class="btn btn-info">Cancelar</a>
 
 
 
 </form>
+@section scripts{ 
+
+<script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+
+}

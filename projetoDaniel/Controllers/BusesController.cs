@@ -22,20 +22,31 @@ namespace projetoDaniel.Controllers
             return View(model);
         }
         [HttpGet]
-        public IActionResult AddEdit()
+        public IActionResult AddEdit(int? id)
         {
 
-            return View();
+            Buses model = new Buses();
+            if (id != null)
+            {
+
+                model = _ctx.Buses.Find(id);
+            }
+
+            return View(model);
 
         }
 
         [HttpPost]
         public IActionResult AddEdit(Buses model)
         {
-            _ctx.Buses.Add(model);
-            _ctx.SaveChanges();
-            return RedirectToAction("Index");
-            
+            if (ModelState.IsValid)
+            {
+                _ctx.Buses.Add(model);
+                _ctx.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+
         }
     }
 }
