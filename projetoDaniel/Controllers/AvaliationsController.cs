@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetoDaniel.Data;
+using projetoDaniel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,8 @@ using System.Threading.Tasks;
 namespace projetoDaniel.Controllers
 {
     [Authorize]
-    public class AvaliationsController:Controller
+    public class AvaliationsController : Controller
     {
-        private ProjectTestDataContext db = new ProjectTestDataContext();
         private readonly ProjectTestDataContext _ctx;
 
         public AvaliationsController(ProjectTestDataContext ctx)
@@ -21,14 +21,48 @@ namespace projetoDaniel.Controllers
 
         }
 
+
+
+
         public IActionResult Index()
         {
 
-            var model = _ctx.Avaliations.ToList();
-            return View(model); 
+            AvaliationsIndexVM viewModel = new AvaliationsIndexVM
+            {
+
+                Buses = _ctx.Buses.ToList(),
+                Avaliation = _ctx.Avaliations.ToList(),
+            };
+
+
+            return View(viewModel);
         }
 
-       
+        [HttpGet]
+        public IActionResult AddAvaliation()
+        {
+
+
+            AvaliationAddVM model = new AvaliationAddVM();
+            return View(model);
+
+        }
+
+        [HttpPost]
+        public IActionResult AddAvaliation(Avaliation model)
+        {
+            if (ModelState.IsValid)
+            {
+                _ctx.Avaliations.Add(model);
+                _ctx.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(model);
+
+
+
+
+        }
 
     }
 }

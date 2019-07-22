@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace projetoDaniel.Models
 {
-    public class BigModel
+    public class AvaliationsIndexVM
     {
-        public Buses Buses { get; set; }
-        public  Avaliation Avaliation { get; set; }
+        public List<Buses> Buses { get; set; }
+        public  List<Avaliation> Avaliation { get; set; }
 
-        public User User { get; set; }
     }
 }

@@ -1,19 +1,19 @@
-﻿@using projetoDaniel.Models
-@model 
+﻿@model AvaliationsIndexVM
 @{
     ViewBag.Title = "Avaliações dos Ônibus";
 }
 
 <h2>@ViewBag.Title</h2>
 
+
 <table class="table">
     <thead class="thead-light">
         <tr>
-            <th>Id do Ônibus</th>
+            <th>Prefixo do ônibus</th>
             <th>Espaço</th>
             <th>Barulho</th>
             <th>Balanco</th>
-            <th>Ar Condicionado/th>
+            <th>Ar Condicionado</th>
             <th>Conforto</th>
             <th>Tem Wifi?</th>
 
@@ -22,8 +22,61 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            @{
+
+                int nav = 0;
+                foreach(Avaliation av in Model.Avaliation)
+                {
+                    nav++;
+
+                }
+                int nbus = 0;
+                foreach(Buses bus in Model.Buses)
+                {
+                    nbus++;
+
+                }
+
+                foreach (Buses bus in Model.Buses)
+                {
+                    foreach(Avaliation av in Model.Avaliation)
+                    {
+                        if(bus.Id == av.BusId)
+                        {
+                            <td>@bus.Prefixo</td>
+                            <td>@av.Space</td>
+                            <td>@av.Barulho</td>
+                            <td>@av.Balanco</td>
+                            <td>@av.ArCond</td>
+                            <td>@av.Conforto</td>
+                            if (av.TemWifi == 0)
+                            {
+                                <td>NÃO</td>
+                            }
+                            else
+                            {
+                                <td>SIM</td>
+                            }
+                        }
+
+
+                    }
+
+                }
+
+            }
+           
+            
+        </tr>
         
-    </tbody>
+</tbody>
 
 
 </table>
+
+@section  scripts{ 
+
+
+
+}
