@@ -25,5 +25,7 @@ namespace projetoDaniel.Data
 
         public DbSet<Buses> Buses { get; set; }
         public DbSet<Avaliation> Avaliations { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }

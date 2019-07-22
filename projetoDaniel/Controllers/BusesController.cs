@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using projetoDaniel.Data;
 using projetoDaniel.Models;
 using System.Linq;
 
+
+
 namespace projetoDaniel.Controllers
 {
+    [Authorize]
     public class BusesController : Controller
     {
 
@@ -35,7 +39,7 @@ namespace projetoDaniel.Controllers
             return View(model);
 
         }
-
+ 
         [HttpPost]
         public IActionResult AddEdit(Buses model)
         {
@@ -46,6 +50,22 @@ namespace projetoDaniel.Controllers
                 return RedirectToAction("Index");
             }
             return View(model);
+
+        }
+        
+        [HttpDelete]
+        public IActionResult Excluir (int id)
+        {
+            var buses = _ctx.Buses.Find(id);
+
+            if (buses == null)
+            {
+                return NotFound();
+            }
+            _ctx.Buses.Remove(buses);
+            _ctx.SaveChanges();
+
+            return NoContent();
 
         }
     }

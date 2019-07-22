@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace projetoDaniel.Models
 {
+    [Table(nameof(Avaliation))]
     public class Avaliation:Entity 
     {
         [Required]
@@ -22,12 +23,11 @@ namespace projetoDaniel.Models
 
         [ForeignKey(nameof(BusId))]
         public Buses Bus { get; set; }
-        /*
+        
         public int UsuarioId { get; set; }
 
         [ForeignKey(nameof(UsuarioId))]
         public User User { get; set; }
-        */
-
+        
     }
 }

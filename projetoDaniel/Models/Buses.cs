@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace projetoDaniel.Models
 {
 
-
-    [Table("Bus")]
+    
+    [Table(nameof(Buses))]
     public class Buses:Entity
     {
-     
         [Column(TypeName= "varchar(10)")]
         [Required(ErrorMessage ="Campo é obrigatório")]
         public string Prefixo { get; set; }

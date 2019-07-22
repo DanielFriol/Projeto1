@@ -162,3 +162,5 @@ C:\Users\Daniel\source\repos\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\proj
 C:\Users\Daniel\source\repos\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\projetoDaniel.dll
 C:\Users\Daniel\source\repos\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\projetoDaniel.pdb
 C:\Users\Daniel\source\repos\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\projetoDaniel.csproj.CopyComplete
+C:\Users\Daniel\Source\Repos\DanielFriol\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\Razor\Views\Conta\Login.g.cshtml.cs
+C:\Users\Daniel\Source\Repos\DanielFriol\Projeto1\projetoDaniel\obj\Debug\netcoreapp2.1\Razor\Views\Avaliations\Index.g.cshtml.cs

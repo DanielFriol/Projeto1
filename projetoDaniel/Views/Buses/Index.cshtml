@@ -1,6 +1,7 @@
-﻿@model  IEnumerable<Buses>
+﻿@model IEnumerable<Buses>
 
-@{ 
+
+@{
     ViewBag.Title = "Listagem de Ônibus";
 }
 
@@ -11,7 +12,7 @@
 
 
 <table class="table">
-    <thead class="thead-light"> 
+    <thead class="thead-light">
         <tr>
             <th>Prefixo do Ônibus</th>
             <th>Quantidade de Lugares</th>
@@ -25,18 +26,18 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>@item.Prefixo</td>
-            <td>@item.Quantidadelugares</td>
-            <td>@item.Linha</td>
-            <td>@item.Empresa</td>
-            <td>
-                <a class="btn btn-outline-success btn-sm" asp-action="AddEdit" asp-route-id="@item.Id" >Editar</a>
-                <button onclick="excluir('@item.Id','@item.Prefixo')" class="btn btn-danger btn-sm">Excluir</button>
+            <tr id="bus-@item.Id">
+                <td>@item.Prefixo</td>
+                <td>@item.Quantidadelugares</td>
+                <td>@item.Linha</td>
+                <td>@item.Empresa</td>
+                <td>
+                    <a class="btn btn-outline-success btn-sm" asp-action="AddEdit" asp-route-id="@item.Id">Editar</a>
+                    <button onclick="excluir('@item.Id','@item.Prefixo')" class="btn btn-danger btn-sm">Excluir</button>
 
-            </td>
+                </td>
 
-        </tr>
+            </tr>
 
         }
     </tbody>
@@ -44,15 +45,15 @@
 
 </table>
 
-<br />  
+<br />
 <br />
 <div>
     <p align="right">
-    <a class="btn btn-success" asp-action="AddEdit" asp-controller="Buses">Adicionar Ônibus</a>
+        <a class="btn btn-success" asp-action="AddEdit" asp-controller="Buses">Adicionar Ônibus</a>
     </p>
 </div>
 
-<div class="modal" tabindex="-1" role="dialog" id="modal-del">
+<div data-id="0" class="modal" tabindex="-1" role="dialog" id="modal-del">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -66,7 +67,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-primary">Sim</button>
+                <button type="button" class="btn btn-primary" onclick="delYes()">Sim</button>
             </div>
         </div>
     </div>
@@ -74,13 +75,39 @@
 
 
 
-@section  scripts{ 
+@section scripts{
     <script>
-    function excluir(id,prefixo){
+    function excluir(id, prefixo) {
 
         $('#prefixo-onibus').text(prefixo);
-        $('#modal-del').modal('show');
-        
+        $('#modal-del').data('id',id).modal('show');
+    }
+
+    var _url = '@Url.Action("Excluir")';
+
+    function delYes() {
+        var _id = $('#modal-del').data('id');
+        $.ajax({
+            url: _url,
+            data: { id : _id },
+            dataType: 'json',
+            type: 'delete',
+            success: function () {
+               //alert('Item Excluído!')
+                toastr.success('Ônibus excluído com sucesso! :)', 'Avaliador de Intercamp');
+                $('#bus-' + _id).remove();
+            },
+            error: function () {
+                //  alert('Erro ao excluir!')
+                toastr.error('Erro ao excluir ônibus  :(', 'Avaliador de Intercamp');
+            },
+            complete: function () {
+                $('#modal-del').modal('hide');
+
+            }
+
+        });
+
     }
     </script>
 }
