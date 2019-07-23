@@ -25,6 +25,27 @@
           "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
         }
       },
+      "Microsoft.AspNet.WebPages.Data/3.2.7": {
+        "type": "package",
+        "compile": {
+          "lib/net45/WebMatrix.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/WebMatrix.Data.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.WebData/3.2.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebPages.Data": "3.2.7"
+        },
+        "compile": {
+          "lib/net45/WebMatrix.WebData.dll": {}
+        },
+        "runtime": {
+          "lib/net45/WebMatrix.WebData.dll": {}
+        }
+      },
       "Microsoft.AspNetCore/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -1747,6 +1768,17 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.Exchange.WebServices/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/40/Microsoft.Exchange.WebServices.Auth.dll": {},
+          "lib/40/Microsoft.Exchange.WebServices.dll": {}
+        },
+        "runtime": {
+          "lib/40/Microsoft.Exchange.WebServices.Auth.dll": {},
+          "lib/40/Microsoft.Exchange.WebServices.dll": {}
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/2.1.1": {
@@ -4724,6 +4756,32 @@
         "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
+    "Microsoft.AspNet.WebPages.Data/3.2.7": {
+      "sha512": "wRnglowAe94/SMZpwEYKfXLe6U0yYu4bxMOBPIZyBAH0WE8m8I3wU43p7ZTOCTfOLWHalJ3cvN73Y23BBZqPbg==",
+      "type": "package",
+      "path": "microsoft.aspnet.webpages.data/3.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/WebMatrix.Data.dll",
+        "lib/net45/WebMatrix.Data.xml",
+        "microsoft.aspnet.webpages.data.3.2.7.nupkg.sha512",
+        "microsoft.aspnet.webpages.data.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebPages.WebData/3.2.7": {
+      "sha512": "AxvuTZdF1Z216x0ErUw/84QNsf42PuSFr0V3tUAzm8v0tVdg2SYTgRRxF9TgTRfkG3RA1Om5dmlyS3x3/MYotQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webpages.webdata/3.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/WebMatrix.WebData.dll",
+        "lib/net45/WebMatrix.WebData.xml",
+        "microsoft.aspnet.webpages.webdata.3.2.7.nupkg.sha512",
+        "microsoft.aspnet.webpages.webdata.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore/2.1.1": {
       "sha512": "9r1qojnhb9BJYqK+vpyzzHoovfc12VHQ5l61blIn1QHWb8R6946LKoUnteXbtpy3Sn8bn4OAB5ZEPKwwAyeGjQ==",
       "type": "package",
@@ -6265,6 +6323,26 @@
         "tools/net461/win-x86/ef.exe",
         "tools/netcoreapp2.0/any/ef.dll",
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
+      ]
+    },
+    "Microsoft.Exchange.WebServices/2.2.0": {
+      "sha512": "NlkaTD0uWtg9VbiWq0VDWMBPzHFknH3tmstrxt0acrT09LBGqATTjRpsGOODz6tUdX7/dehBinxsf75U5Uw/+A==",
+      "type": "package",
+      "path": "microsoft.exchange.webservices/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "doc/License Terms.rtf",
+        "doc/README.htm",
+        "doc/Redist.txt",
+        "lib/40/Microsoft.Exchange.WebServices.Auth.dll",
+        "lib/40/Microsoft.Exchange.WebServices.Auth.pdb",
+        "lib/40/Microsoft.Exchange.WebServices.Auth.xml",
+        "lib/40/Microsoft.Exchange.WebServices.dll",
+        "lib/40/Microsoft.Exchange.WebServices.pdb",
+        "lib/40/Microsoft.Exchange.WebServices.xml",
+        "microsoft.exchange.webservices.2.2.0.nupkg.sha512",
+        "microsoft.exchange.webservices.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/2.1.1": {
@@ -12656,8 +12734,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Microsoft.AspNet.WebPages.WebData >= 3.2.7",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
+      "Microsoft.Exchange.WebServices >= 2.2.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
       "bootstrap >= 4.3.1"
@@ -12670,11 +12750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
       "projectName": "projetoDaniel",
-      "projectPath": "C:\\Users\\Daniel\\source\\repos\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
+      "projectPath": "C:\\Users\\Daniel\\source\\repos\\DanielFriol\\Projeto1\\projetoDaniel\\projetoDaniel.csproj",
       "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Daniel\\source\\repos\\Projeto1\\projetoDaniel\\obj\\",
+      "outputPath": "C:\\Users\\Daniel\\source\\repos\\DanielFriol\\Projeto1\\projetoDaniel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12704,6 +12784,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Microsoft.AspNet.WebPages.WebData": {
+            "target": "Package",
+            "version": "[3.2.7, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -12714,6 +12798,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.2, )"
+          },
+          "Microsoft.Exchange.WebServices": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
@@ -12736,5 +12824,37 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.AspNet.WebPages.Data 3.2.7' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.AspNet.WebPages.Data",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.AspNet.WebPages.WebData 3.2.7' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.AspNet.WebPages.WebData",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Microsoft.Exchange.WebServices 2.2.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Microsoft.Exchange.WebServices",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

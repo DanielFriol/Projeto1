@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using projetoDaniel.Data;
+
 using projetoDaniel.Models;
 using System.Linq;
 

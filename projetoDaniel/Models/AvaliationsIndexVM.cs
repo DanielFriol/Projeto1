@@ -8,6 +8,8 @@ namespace projetoDaniel.Models
 {
     public class AvaliationsIndexVM
     {
+        internal List<Buses> userId;
+
         public List<Buses> Buses { get; set; }
         public  List<Avaliation> Avaliation { get; set; }
 

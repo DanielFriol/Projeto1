@@ -43,7 +43,8 @@ namespace projetoDaniel.Controllers
                 if (ModelState.IsValid)
                 {
                     var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme, ClaimTypes.Name, ClaimTypes.Role);
-                    identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, usuario.Email));
+                    identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()));
+                    identity.AddClaim(new Claim(ClaimTypes.Email, usuario.Email));
                     identity.AddClaim(new Claim(ClaimTypes.Name, usuario.Nome));
                     var principal = new ClaimsPrincipal(identity);
                     await HttpContext.SignInAsync(
