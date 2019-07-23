@@ -17,7 +17,6 @@ namespace projetoDaniel.Controllers
     public class AvaliationsController : Controller
     {
         private readonly ProjectTestDataContext _ctx;
-        private readonly UserManager<User> _userManager;
         public AvaliationsController(ProjectTestDataContext ctx)
         {
             _ctx = ctx;

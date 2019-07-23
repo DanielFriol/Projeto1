@@ -46,7 +46,17 @@ namespace projetoDaniel.Controllers
         {
             if (ModelState.IsValid)
             {
-                _ctx.Buses.Add(model);
+                if (model.Id == 0)
+                {
+
+                    _ctx.Buses.Add(model);
+
+                }
+                else
+                {
+                    _ctx.Buses.Update(model);
+
+                }
                 _ctx.SaveChanges();
                 return RedirectToAction("Index");
             }

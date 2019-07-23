@@ -12,11 +12,7 @@ namespace projetoDaniel.Models
         public Buses Bus { get; set; }
         public User User { get; set; }
 
-        int um = 1;
-        int dois = 2;
-        int tres = 3;
-        int quatro = 4;
-        int cinco = 5;
+      
 
         public List<Avaliation> avaliations { get; set; }
 
